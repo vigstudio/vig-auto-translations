@@ -21,7 +21,7 @@ class Dictionary
         return $this;
     }
 
-    public function getTranslate(string $text): string|null
+    public function getTranslate(string $text): ?string
     {
         try {
             if (empty($this->dictionary)) {

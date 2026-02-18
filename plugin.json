@@ -5,8 +5,9 @@
     "provider": "VigStudio\\VigAutoTranslations\\Providers\\VigAutoTranslationsServiceProvider",
     "author": "Nghĩa Nè",
     "url": "https://nghiane.com",
-    "version": "0.1.9",
+    "version": "0.3.0",
     "description": "Auto Translations Theme and Plugin for Botble CMS, using Google or Amazon Translate",
+    "minimum_core_version": "7.0.0",
     "required_plugins": [
         "translation"
     ]

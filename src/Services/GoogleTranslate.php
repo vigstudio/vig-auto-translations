@@ -103,7 +103,7 @@ class GoogleTranslate
      * @param array $options HTTP client configuration options
      * @param TokenProviderInterface|null $tokenProvider
      */
-    public function __construct(string $target = 'en', string $source = null, array $options = [], TokenProviderInterface $tokenProvider = null)
+    public function __construct(string $target = 'en', ?string $source = null, array $options = [], ?TokenProviderInterface $tokenProvider = null)
     {
         $this->client = new Client(['verify' => false]);
         $this->setTokenProvider($tokenProvider ?? new GoogleTokenGenerator())
@@ -131,7 +131,7 @@ class GoogleTranslate
      * @param string|null $source Source language code (null for automatic language detection)
      * @return GoogleTranslate
      */
-    public function setSource(string $source = null): self
+    public function setSource(?string $source = null): self
     {
         $this->source = $source ?? 'auto';
 
@@ -214,7 +214,7 @@ class GoogleTranslate
      * @throws TranslationRequestException If any other HTTP related error occurs
      * @throws TranslationDecodingException If response JSON cannot be decoded
      */
-    public static function trans(string $string, string $target = 'en', string $source = null, array $options = [], TokenProviderInterface $tokenProvider = null): ?string
+    public static function trans(string $string, string $target = 'en', ?string $source = null, array $options = [], ?TokenProviderInterface $tokenProvider = null): ?string
     {
         return (new self())
             ->setTokenProvider($tokenProvider ?? new GoogleTokenGenerator())

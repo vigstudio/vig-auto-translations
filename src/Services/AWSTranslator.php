@@ -14,7 +14,7 @@ use VigStudio\VigAutoTranslations\Contracts\Translator;
  */
 class AWSTranslator implements Translator
 {
-    public function translate(string $source, string $target, string $value): string|null
+    public function translate(string $source, string $target, string $value): ?string
     {
         $config = $this->loadAWSConfiguration();
 
